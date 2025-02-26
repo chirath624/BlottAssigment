@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, FlatList, Image, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, FlatList, Image, StyleSheet } from "react-native";
 import axios from "axios";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -8,8 +8,7 @@ const API_URL = "https://finnhub.io/api/v1/news?category=general&token=crals9pr0
 const NewsScreen = () => {
     const [news, setNews] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [firstName, setFirstName] = useState(""); // State to store the user's first name
-
+    const [firstName, setFirstName] = useState("");
     useEffect(() => {
         const fetchNews = async () => {
             try {
@@ -39,7 +38,7 @@ setInterval(()=>{
             }
         };
 
-        fetchFirstName(); // Fetch first name when the component mounts
+        fetchFirstName();
     }, []);
     const renderItem = ({ item }) => (
         <View style={styles.newsItem}>

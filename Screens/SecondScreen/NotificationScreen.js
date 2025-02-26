@@ -1,7 +1,7 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {View, Text, Image, TouchableOpacity, StyleSheet, Platform, PermissionsAndroid} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import {check,request, PERMISSIONS, RESULTS} from 'react-native-permissions';
+import {check,request, RESULTS} from 'react-native-permissions';
 
 const NotificationScreen = () => {
 
