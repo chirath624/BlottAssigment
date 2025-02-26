@@ -31,7 +31,7 @@ setInterval(()=>{
             try {
                 const storedFirstName = await AsyncStorage.getItem('firstName');
                 if (storedFirstName !== null) {
-                    setFirstName(storedFirstName); // Set the first name in state
+                    setFirstName(storedFirstName);
                 }
             } catch (error) {
                 console.error('Error fetching first name:', error);
