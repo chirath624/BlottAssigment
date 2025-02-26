@@ -11,24 +11,24 @@ const LegalNameScreen = () => {
 
     const handleSubmit = async () => {
         if (!firstName.trim() || !lastName.trim()) {
-            Alert.alert("Error", "Please fill in all required fields.");
+            Alert.alert('Error', 'Please fill in all required fields.');
             return;
         }
 
         try {
 
-            await AsyncStorage.setItem("firstName", firstName);
+            await AsyncStorage.setItem('firstName', firstName);
 
 
 
-            navigation.navigate("NotificationScreen");
+            navigation.navigate('NotificationScreen');
         } catch (error) {
 
-            Alert.alert("Error", "Failed to save data. Please try again.");
+            Alert.alert('Error', 'Failed to save data. Please try again.');
         }
     };
     return (
-        <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={styles.container}>
+        <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={styles.container}>
             <Text style={styles.title}>Your legal name</Text>
             <Text style={styles.subtitle}>We need to know a bit about you so that we can create your account.</Text>
 
@@ -52,29 +52,29 @@ const LegalNameScreen = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: "flex-start",
-        justifyContent: "flex-start",
+        alignItems: 'flex-start',
+        justifyContent: 'flex-start',
         paddingHorizontal: 20,
         paddingTop: 50,
-        backgroundColor: "#fff",
+        backgroundColor: '#fff',
     },
-    title: { fontSize: 24, fontWeight: "bold", marginBottom: 10 },
-    subtitle: { fontSize: 14, color: "gray", marginBottom: 20 },
+    title: { fontSize: 24, fontWeight: 'bold', marginBottom: 10 },
+    subtitle: { fontSize: 14, color: 'gray', marginBottom: 20 },
     input: {
         borderBottomWidth: 1,
-        borderBottomColor: "#ccc",
-        width: "100%",
+        borderBottomColor: '#ccc',
+        width: '100%',
         fontSize: 18,
         paddingVertical: 5,
         marginBottom: 20,
     },
     button: {
-        alignSelf: "flex-end",
-        backgroundColor: "blue",
+        alignSelf: 'flex-end',
+        backgroundColor: 'blue',
         borderRadius: 50,
         padding: 10,
     },
-    buttonText: { fontSize: 24, color: "white" },
+    buttonText: { fontSize: 24, color: 'white' },
 });
 
 export default LegalNameScreen;

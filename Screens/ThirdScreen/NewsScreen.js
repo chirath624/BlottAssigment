@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { View, Text, FlatList, Image, StyleSheet } from "react-native";
-import axios from "axios";
+import React, { useEffect, useState } from 'react';
+import { View, Text, FlatList, Image, StyleSheet } from 'react-native';
+import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const API_URL = "https://finnhub.io/api/v1/news?category=general&token=crals9pr01qhk4bqotb0crals9pr01qhk4bqotbg";
+const API_URL = 'https://finnhub.io/api/v1/news?category=general&token=crals9pr01qhk4bqotb0crals9pr01qhk4bqotbg';
 
 const NewsScreen = () => {
     const [news, setNews] = useState([]);
@@ -16,7 +16,7 @@ const NewsScreen = () => {
                 console.log(response);
                 setNews(response.data);
             } catch (error) {
-                console.error("Error fetching news:", error);
+                console.error('Error fetching news:', error);
             } finally {
                 setLoading(false);
             }
@@ -29,12 +29,12 @@ setInterval(()=>{
     useEffect(() => {
         const fetchFirstName = async () => {
             try {
-                const storedFirstName = await AsyncStorage.getItem("firstName");
+                const storedFirstName = await AsyncStorage.getItem('firstName');
                 if (storedFirstName !== null) {
                     setFirstName(storedFirstName); // Set the first name in state
                 }
             } catch (error) {
-                console.error("Error fetching first name:", error);
+                console.error('Error fetching first name:', error);
             }
         };
 
@@ -65,14 +65,14 @@ setInterval(()=>{
 };
 
 const styles = StyleSheet.create({
-    container: { flex: 1, backgroundColor: "#000", paddingHorizontal: 10, paddingTop: 40 },
-    header: { color: "#fff", fontSize: 24, fontWeight: "bold", marginBottom: 10 },
-    loading: { color: "#fff", textAlign: "center", marginTop: 20 },
-    newsItem: { flexDirection: "row", backgroundColor: "#121212", padding: 10, borderRadius: 8, marginBottom: 10 },
+    container: { flex: 1, backgroundColor: '#000', paddingHorizontal: 10, paddingTop: 40 },
+    header: { color: '#fff', fontSize: 24, fontWeight: 'bold', marginBottom: 10 },
+    loading: { color: '#fff', textAlign: 'center', marginTop: 20 },
+    newsItem: { flexDirection: 'row', backgroundColor: '#121212', padding: 10, borderRadius: 8, marginBottom: 10 },
     image: { width: 80, height: 80, borderRadius: 5, marginRight: 10 },
     textContainer: { flex: 1 },
-    source: { color: "#999", fontSize: 12 },
-    title: { color: "#fff", fontSize: 16, fontWeight: "bold" },
+    source: { color: '#999', fontSize: 12 },
+    title: { color: '#fff', fontSize: 16, fontWeight: 'bold' },
 });
 
 export default NewsScreen;

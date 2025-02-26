@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Image, TouchableOpacity, StyleSheet, Platform, PermissionsAndroid} from 'react-native';
+import {View, Text, Image, TouchableOpacity, StyleSheet, PermissionsAndroid} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {check,request, RESULTS} from 'react-native-permissions';
 
@@ -20,17 +20,17 @@ const NotificationScreen = () => {
         if (checkPermission !== RESULTS.GRANTED) {
             const request = await requestNotificationPermission();
             if(request === RESULTS.GRANTED){
-                navigation.navigate("NewsScreen")
+                navigation.navigate('NewsScreen')
             }
         }else if(checkPermission === RESULTS.GRANTED){
-            navigation.navigate("NewsScreen")
+            navigation.navigate('NewsScreen')
         }
     };
 
 
     return (
         <View style={styles.container}>
-            <Image source={require("../../assets/notification.png")} style={styles.image} />
+            <Image source={require('../../assets/notification.png')} style={styles.image} />
             <Text style={styles.title}>Get the most out of Blott ✅</Text>
             <Text style={styles.subtitle}>
                 Allow notifications to stay in the loop with your payments, requests, and groups.
@@ -45,9 +45,9 @@ const NotificationScreen = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: "#fff",
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#fff',
         paddingHorizontal: 20,
     },
     image: {
@@ -57,24 +57,24 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 20,
-        fontWeight: "bold",
-        textAlign: "center",
+        fontWeight: 'bold',
+        textAlign: 'center',
         marginBottom: 10,
     },
     subtitle: {
         fontSize: 14,
-        color: "gray",
-        textAlign: "center",
+        color: 'gray',
+        textAlign: 'center',
         marginBottom: 20,
     },
     button: {
-        backgroundColor: "blue",
+        backgroundColor: 'blue',
         paddingVertical: 12,
         paddingHorizontal: 40,
         borderRadius: 25,
     },
     buttonText: {
-        color: "white",
+        color: 'white',
         fontSize: 16,
     },
 });
