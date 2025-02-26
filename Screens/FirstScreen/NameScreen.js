@@ -6,8 +6,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 const LegalNameScreen = () => {
     const navigation = useNavigation();
 
-    const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
 
     const handleSubmit = async () => {
         if (!firstName.trim() || !lastName.trim()) {

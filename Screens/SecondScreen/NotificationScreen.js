@@ -20,10 +20,10 @@ const NotificationScreen = () => {
         if (checkPermission !== RESULTS.GRANTED) {
             const request = await requestNotificationPermission();
             if(request === RESULTS.GRANTED){
-                navigation.navigate('NewsScreen')
+                navigation.navigate('NewsScreen');
             }
         }else if(checkPermission === RESULTS.GRANTED){
-            navigation.navigate('NewsScreen')
+            navigation.navigate('NewsScreen');
         }
     };
 

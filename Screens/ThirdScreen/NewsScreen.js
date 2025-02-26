@@ -8,7 +8,7 @@ const API_URL = 'https://finnhub.io/api/v1/news?category=general&token=crals9pr0
 const NewsScreen = () => {
     const [news, setNews] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [firstName, setFirstName] = useState("");
+    const [firstName, setFirstName] = useState('');
     useEffect(() => {
         const fetchNews = async () => {
             try {
@@ -23,7 +23,7 @@ const NewsScreen = () => {
         };
 setInterval(()=>{
     fetchNews();
-},60000)
+},60000);
 
     }, []);
     useEffect(() => {
